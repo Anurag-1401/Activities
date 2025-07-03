@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+All page
+{% endblock %}
+
+{% block content %}
+    <h1>hii from all</h1>
+
+    <div class="grid grid-cols-3 gap-4 m-4">
+   {% for a in ap %}
+    <div class="bg-blue-800 p-5 rounded">
+          <img class="rounded shadow-lg" src="{{a.image.url}}" alt="">  
+          <h3>{{a.name}}</h3>
+
+          <a href="{% url 'all_des' a.id %}">
+
+            <button type="button">
+                {{a.type}} - {{a.id}}
+            </button>
+
+          </a>
+
+    </div>
+{% endfor %}
+</div> 
+
+{% endblock %}
+
