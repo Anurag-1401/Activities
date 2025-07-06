@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Camera Snapshot</h3>
+    <video id="cam" autoplay width="300" height="200"></video>
+    <canvas id="photo" width="300" height="200"></canvas>
+    <button onclick="snap()">Capture</button>
+    <script>
+      navigator.mediaDevices.getUserMedia({ video: true }).then(s => {
+        document.getElementById('cam').srcObject = s;
+      });
+      function snap() {
+        const c = document.getElementById('photo').getContext('2d');
+        c.drawImage(document.getElementById('cam'), 0, 0, 300, 200);
+      }
+    </script>
+</body>
+</html>

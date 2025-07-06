@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</head>
+<body>
+    <h3>QR from Text</h3>
+    <input id="qrInput" placeholder="Enter text">
+    <button onclick="makeQR()">Generate</button>
+    <div id="qrBox"></div>
+    <script>
+      function makeQR() {
+        const text = document.getElementById('qrInput').value;
+        document.getElementById('qrBox').innerHTML = '';
+        new QRCode(document.getElementById('qrBox'), text);
+      }
+    </script>
+</body>
+</html>
