@@ -4,7 +4,7 @@ from .models import Allmodel,Allrev,Allcer,Store
 # Register your models here.
 class AllrevInLine(admin.TabularInline):
     model = Allrev
-    extra = 2
+    extra = 3
 
 class AllmodelAdmin(admin.ModelAdmin):
     list_display = ('name','type','date',)
