@@ -27,3 +27,4 @@
 #     password += random.choice(val)
 
 # print(password)
+print("Je Baat")
