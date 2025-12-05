@@ -1,3 +1,4 @@
+# lets begin
 # import random
 # import string
 
