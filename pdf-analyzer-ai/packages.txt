@@ -1,0 +1,2 @@
+echo tesseract-ocr>packages.txt
+tesseract-ocr
