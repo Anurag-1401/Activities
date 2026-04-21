@@ -1,8 +1,8 @@
-echo streamlit>requirements.txt
-echo pymupdf>>requirements.txt
-echo pytesseract>>requirements.txt
-echo opencv-python-headless>>requirements.txt
-echo numpy>>requirements.txt
-echo pillow>>requirements.txt
-echo langchain>>requirements.txt
-echo langchain-groq>>requirements.txt
+streamlit
+pymupdf
+pytesseract
+opencv-python-headless
+numpy
+pillow
+langchain
+langchain-groq
