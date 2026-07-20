@@ -13,7 +13,7 @@
 #         break
 #     elif(userChoice < target):
 #         print("you guessed smaller")
-#     else:
+#     else: 
 #         print("guessed large")
 
 # print(string.ascii_letters)
