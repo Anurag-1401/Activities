@@ -9,7 +9,7 @@
         "pdf-analyzer-ai/app.py"
       ]
     },
-    "vscode": {
+    "vscode": { 
       "settings": {},
       "extensions": [
         "ms-python.python",
