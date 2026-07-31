@@ -4,6 +4,6 @@ pytesseract
 opencv-python-headless
 numpy
 pillow
-langchain
+langchain 
 langchain-groq
 PyPDF2
