@@ -6,7 +6,7 @@ let obj = {
 
 Object.defineProperty(obj,"ac_no",{
     writable:false,
-})
+}) 
 
 obj.ac_no = 10
 console.log(obj.ac_no)
