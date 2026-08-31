@@ -7,7 +7,7 @@
 # target = random.randint(1,100)
 
 # while True :
-#     userChoice = int(input("Guess: "))
+#     userChoice = int(input("Guess: ")) 
 #     if(userChoice == target):
 #         print("Success")
 #         break
