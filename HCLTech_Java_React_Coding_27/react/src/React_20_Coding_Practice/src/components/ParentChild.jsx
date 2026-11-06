@@ -1,0 +1,3 @@
+import {useState} from "react";
+function Child({message,onSend}){return <div><p>Child received: {message}</p><button onClick={()=>onSend("Hello Parent, from Child!")}>Send to parent</button></div>}
+export default function ParentChild(){const [message,M]=useState("Hello Child"),[reply,R]=useState("No reply yet");return <section className="exercise"><h2>20. Parent-child communication</h2><p>Parent message: {message}</p><Child message={message} onSend={R}/><p>Parent received: {reply}</p><button onClick={()=>M("Parent updated the message")}>Update parent message</button></section>}

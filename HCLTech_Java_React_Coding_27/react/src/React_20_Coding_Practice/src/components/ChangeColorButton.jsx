@@ -1,0 +1,2 @@
+import {useState} from "react";
+export default function ChangeColorButton(){const colors=["tomato","royalblue","seagreen","purple"];const [i,S]=useState(0);return <section className="exercise"><h2>1. Change button color</h2><button style={{background:colors[i],color:"white"}} onClick={()=>S((i+1)%colors.length)}>Change color</button></section>}

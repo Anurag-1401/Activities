@@ -1,0 +1,3 @@
+import {useMemo,useState} from "react";
+const initial=[{id:1,name:"Keyboard",price:1200,qty:1},{id:2,name:"Mouse",price:600,qty:1},{id:3,name:"Headphones",price:1800,qty:1}];
+export default function ShoppingCart(){const [cart,S]=useState(initial);const total=useMemo(()=>cart.reduce((sum,x)=>sum+x.price*x.qty,0),[cart]);function change(id,d){S(a=>a.map(x=>x.id===id?{...x,qty:x.qty+d}:x).filter(x=>x.qty>0))}return <section className="exercise"><h2>12. Shopping cart</h2>{cart.map(x=><p key={x.id}>{x.name} ₹{x.price} <button onClick={()=>change(x.id,-1)}>-</button> {x.qty} <button onClick={()=>change(x.id,1)}>+</button></p>)}<h3>Total: ₹{total}</h3></section>}

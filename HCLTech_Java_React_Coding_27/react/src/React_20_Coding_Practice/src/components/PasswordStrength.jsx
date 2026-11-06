@@ -1,0 +1,2 @@
+import {useState} from "react";
+export default function PasswordStrength(){const [p,S]=useState("");let score=[p.length>=8,/[A-Z]/.test(p)&&/[a-z]/.test(p),/\\d/.test(p),/[^A-Za-z0-9]/.test(p)].filter(Boolean).length;let labels=["Empty","Weak","Fair","Good","Strong"];return <section className="exercise"><h2>11. Password strength</h2><input type="password" value={p} onChange={e=>S(e.target.value)} placeholder="Password"/><p>Strength: {labels[p?score:0]}</p><progress value={score} max="4"/></section>}

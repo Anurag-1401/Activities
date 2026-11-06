@@ -1,0 +1,2 @@
+import {useEffect,useState} from "react";
+export default function DigitalClock(){const [now,S]=useState(new Date());useEffect(()=>{const id=setInterval(()=>S(new Date()),1000);return ()=>clearInterval(id)},[]);return <section className="exercise"><h2>7. Digital clock</h2><h3>{now.toLocaleTimeString()}</h3><p>{now.toLocaleDateString()}</p></section>}

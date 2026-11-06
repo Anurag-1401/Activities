@@ -1,0 +1,2 @@
+import {useState} from "react";
+export default function Modal(){const [open,S]=useState(false);return <section className="exercise"><h2>15. Modal popup</h2><button onClick={()=>S(true)}>Open modal</button>{open&&<div className="backdrop" onClick={()=>S(false)}><div className="modal" role="dialog" aria-modal="true" onClick={e=>e.stopPropagation()}><button onClick={()=>S(false)}>Close ✕</button><h3>Modal title</h3><p>This is modal content.</p></div></div>}</section>}

@@ -1,0 +1,3 @@
+import {useState} from "react";
+const rows=Array.from({length:37},(_,i)=>`Record ${i+1}`);
+export default function Pagination(){const [page,S]=useState(1),size=5,total=Math.ceil(rows.length/size);return <section className="exercise"><h2>13. Pagination</h2><ul>{rows.slice((page-1)*size,page*size).map(x=><li key={x}>{x}</li>)}</ul><button disabled={page===1} onClick={()=>S(p=>p-1)}>Previous</button> Page {page}/{total} <button disabled={page===total} onClick={()=>S(p=>p+1)}>Next</button></section>}

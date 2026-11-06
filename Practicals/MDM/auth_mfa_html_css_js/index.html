@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication + MFA Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>Cybersecurity Authentication Demo</h1>
+        <p>Password Policy + Login Verification + Account Lockout + OTP/MFA</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="message" class="message hidden"></div>
+
+      <!-- HOME -->
+      <section id="homeView" class="view">
+        <div class="card hero">
+          <span class="badge">Practical Web Application</span>
+          <h2>User Authentication with Password Policy and MFA</h2>
+          <p>
+            This front-end-only educational project demonstrates registration,
+            password policy validation, password verification, failed-attempt
+            lockout, OTP-based MFA, protected dashboard access, and logout.
+          </p>
+
+          <div class="button-row">
+            <button class="primary" data-view="registerView">Create Account</button>
+            <button class="secondary" data-view="loginView">Login</button>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>1. Password Policy</h3>
+            <p>Minimum 8 characters, uppercase, lowercase, digit and special character.</p>
+          </div>
+          <div class="card">
+            <h3>2. Account Lockout</h3>
+            <p>Account locks for 10 minutes after 5 failed password attempts.</p>
+          </div>
+          <div class="card">
+            <h3>3. MFA</h3>
+            <p>Password is followed by a one-time 6-digit OTP verification.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- REGISTER -->
+      <section id="registerView" class="view hidden">
+        <div class="card form-card">
+          <div class="section-heading">
+            <h2>Create Account</h2>
+            <button class="link-btn" data-view="homeView">← Home</button>
+          </div>
+
+          <form id="registerForm">
+            <label for="registerUsername">Username</label>
+            <input id="registerUsername" type="text" autocomplete="username" required>
+
+            <label for="registerPassword">Password</label>
+            <input id="registerPassword" type="password" autocomplete="new-password" required>
+
+            <div class="policy-box">
+              <strong>Password Policy</strong>
+              <ul id="policyList">
+                <li id="ruleLength">At least 8 characters</li>
+                <li id="ruleUpper">At least one uppercase letter</li>
+                <li id="ruleLower">At least one lowercase letter</li>
+                <li id="ruleDigit">At least one digit</li>
+                <li id="ruleSpecial">At least one special character</li>
+              </ul>
+            </div>
+
+            <button class="primary full" type="submit">Register</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- LOGIN -->
+      <section id="loginView" class="view hidden">
+        <div class="card form-card">
+          <div class="section-heading">
+            <h2>Login</h2>
+            <button class="link-btn" data-view="homeView">← Home</button>
+          </div>
+
+          <form id="loginForm">
+            <label for="loginUsername">Username</label>
+            <input id="loginUsername" type="text" autocomplete="username" required>
+
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" autocomplete="current-password" required>
+
+            <button class="primary full" type="submit">Verify Password</button>
+          </form>
+
+          <div class="info-box">
+            <strong>Lockout policy:</strong> 5 failed attempts → 10-minute lock.
+          </div>
+        </div>
+      </section>
+
+      <!-- OTP / MFA -->
+      <section id="otpView" class="view hidden">
+        <div class="card form-card">
+          <span class="badge">Second Factor</span>
+          <h2>MFA / OTP Verification</h2>
+          <p>
+            Password verification was successful. Enter the 6-digit OTP generated
+            for this demo.
+          </p>
+
+          <div class="otp-demo-box">
+            <span>Demo OTP</span>
+            <strong id="demoOtp">------</strong>
+            <small id="otpExpiry">OTP expires in 60 seconds</small>
+          </div>
+
+          <form id="otpForm">
+            <label for="otpInput">Enter OTP</label>
+            <input
+              id="otpInput"
+              type="text"
+              inputmode="numeric"
+              maxlength="6"
+              pattern="[0-9]{6}"
+              placeholder="6-digit OTP"
+              required
+            >
+            <button class="primary full" type="submit">Verify MFA</button>
+          </form>
+
+          <button id="resendOtpBtn" class="secondary full" type="button">Generate New OTP</button>
+          <button class="link-btn center-btn" data-view="loginView">Cancel</button>
+        </div>
+      </section>
+
+      <!-- DASHBOARD -->
+      <section id="dashboardView" class="view hidden">
+        <div class="card dashboard-card">
+          <div class="dashboard-header">
+            <div>
+              <span class="badge success-badge">MFA Verified</span>
+              <h2>Protected Dashboard</h2>
+            </div>
+            <button id="logoutBtn" class="danger">Logout</button>
+          </div>
+
+          <div class="status-grid">
+            <div class="status-item">
+              <span>Authenticated User</span>
+              <strong id="dashboardUser">-</strong>
+            </div>
+            <div class="status-item">
+              <span>Password</span>
+              <strong>Verified ✓</strong>
+            </div>
+            <div class="status-item">
+              <span>MFA / OTP</span>
+              <strong>Verified ✓</strong>
+            </div>
+            <div class="status-item">
+              <span>Session</span>
+              <strong>Active</strong>
+            </div>
+          </div>
+
+          <div class="protected-content">
+            <h3>Protected Resource</h3>
+            <p>
+              This dashboard is visible only after successful password verification
+              and MFA verification.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Educational demonstration — client-side only.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

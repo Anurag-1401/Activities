@@ -1,0 +1,2 @@
+import {useState} from "react";
+export default function CharacterCounter(){const [s,S]=useState("");return <section className="exercise"><h2>3. Character counter</h2><textarea maxLength={100} value={s} onChange={e=>S(e.target.value)} /><p>{s.length}/100 characters</p></section>}

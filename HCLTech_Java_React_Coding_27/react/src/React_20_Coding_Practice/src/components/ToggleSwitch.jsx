@@ -1,0 +1,2 @@
+import {useState} from "react";
+export default function ToggleSwitch(){const [on,S]=useState(false);return <section className="exercise"><h2>2. Toggle switch</h2><button role="switch" aria-checked={on} onClick={()=>S(v=>!v)}>{on?"ON":"OFF"}</button></section>}

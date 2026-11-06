@@ -1,0 +1,2 @@
+import {useState} from "react";
+export default function DropdownMenu(){const [v,S]=useState("Select department");return <section className="exercise"><h2>6. Dropdown</h2><select value={v} onChange={e=>S(e.target.value)}><option>Select department</option>{["Engineering","Marketing","Finance","HR"].map(x=><option key={x}>{x}</option>)}</select><p>Selected: {v}</p></section>}

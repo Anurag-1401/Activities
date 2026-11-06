@@ -1,0 +1,3 @@
+import {useEffect,useState} from "react";
+const names=["Aarav","Asha","Ananya","Kabir","Neha","Ravi","Rahul","Priya"];
+export default function DebouncedSearch(){const [q,Q]=useState(""),[term,T]=useState("");useEffect(()=>{const id=setTimeout(()=>T(q),500);return()=>clearTimeout(id)},[q]);const results=names.filter(n=>n.toLowerCase().includes(term.toLowerCase().trim()));return <section className="exercise"><h2>19. Debounced search</h2><input value={q} onChange={e=>Q(e.target.value)} placeholder="Search names"/><small>Updates 500ms after typing stops.</small><ul>{results.map(n=><li key={n}>{n}</li>)}</ul></section>}

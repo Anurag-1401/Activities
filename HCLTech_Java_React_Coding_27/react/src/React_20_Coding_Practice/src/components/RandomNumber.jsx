@@ -1,0 +1,2 @@
+import {useState} from "react";
+export default function RandomNumber(){const [n,S]=useState(null);return <section className="exercise"><h2>8. Random number</h2><button onClick={()=>S(Math.floor(Math.random()*100)+1)}>Generate 1–100</button><h3>{n??"Click generate"}</h3></section>}

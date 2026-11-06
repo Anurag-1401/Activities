@@ -1,0 +1,3 @@
+import {useMemo,useState} from "react";
+const data=[{id:1,name:"Ravi",salary:45000},{id:2,name:"Asha",salary:62000},{id:3,name:"Neha",salary:51000}];
+export default function SortableTable(){const [key,K]=useState("name"),[asc,A]=useState(true);const rows=useMemo(()=>[...data].sort((a,b)=>{let n=typeof a[key]==="string"?a[key].localeCompare(b[key]):a[key]-b[key];return asc?n:-n}),[key,asc]);function sort(k){if(k===key)A(x=>!x);else{K(k);A(true)}}return <section className="exercise"><h2>14. Sortable table</h2><table><thead><tr><th><button onClick={()=>sort("name")}>Name ↕</button></th><th><button onClick={()=>sort("salary")}>Salary ↕</button></th></tr></thead><tbody>{rows.map(x=><tr key={x.id}><td>{x.name}</td><td>{x.salary}</td></tr>)}</tbody></table></section>}

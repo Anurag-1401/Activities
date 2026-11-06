@@ -1,0 +1,2 @@
+import {useState} from "react";
+export default function Tabs(){const data={Home:"Welcome home.",Profile:"Your profile.",Settings:"Application settings."};const [tab,S]=useState("Home");return <section className="exercise"><h2>4. Tabs</h2>{Object.keys(data).map(t=><button key={t} onClick={()=>S(t)} disabled={tab===t}>{t}</button>)}<p>{data[tab]}</p></section>}
